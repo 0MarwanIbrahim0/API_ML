@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+pydantic
+pickle
+scikit-learn
+numpy
+json
+cv2
+paddleocr
+matplotlib
+re
+os
+PIL
