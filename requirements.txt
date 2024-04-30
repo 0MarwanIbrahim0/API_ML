@@ -3,7 +3,6 @@ uvicorn
 pydantic
 scikit-learn
 numpy
-json
 cv2
 paddleocr
 matplotlib
