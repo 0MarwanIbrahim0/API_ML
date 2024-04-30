@@ -6,6 +6,5 @@ numpy
 opencv-python
 paddleocr
 matplotlib
-re
-os
-PIL
+regex
+pillow
