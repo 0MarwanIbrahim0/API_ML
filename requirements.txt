@@ -11,3 +11,4 @@ regex
 pillow
 paddlepaddle
 gunicorn
+python-multipart

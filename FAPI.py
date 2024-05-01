@@ -1,7 +1,7 @@
 from fastapi import FastAPI , File, UploadFile, Query
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
-# import pickle
+import pickle
 import json
 from typing import List
 from OCR import Read_Text
