@@ -8,3 +8,4 @@ paddleocr
 matplotlib
 regex
 pillow
+paddlepaddle
