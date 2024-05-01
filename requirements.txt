@@ -4,6 +4,7 @@ pydantic
 scikit-learn
 numpy
 opencv-python
+PyOpenGL
 paddleocr
 matplotlib
 regex
