@@ -9,3 +9,4 @@ matplotlib
 regex
 pillow
 paddlepaddle
+gunicorn
