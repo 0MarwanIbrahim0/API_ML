@@ -12,3 +12,4 @@ pillow
 paddlepaddle
 gunicorn
 python-multipart
+joblib

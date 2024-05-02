@@ -46,9 +46,6 @@ async def upload_image(
 
 
 
-
-
-
 # class InputData_heart(BaseModel):
 #     age : int
 #     sex : int
@@ -64,37 +61,29 @@ async def upload_image(
 #     ca : int
 #     thal : int
 #     # target : bool
-# class InputData_kidney(BaseModel):
-#     age: int
-#     bp: int
-#     al: int
-#     su: int
-#     rbc: int
-#     pc: int
-#     bgr: float
-#     bu: float
-#     sc: float 
-#     sod: float 
-#     pot: float 
-#     pe: int
+class InputData_kidney(BaseModel):
+    age: int
+    blood_urea: float
+    ser_crea: float
+    sodium: float
+    potassium: float
 
-# @app.post("/predict_kidney")
-# async def predict(input_data_kidney: InputData_kidney):
-#     with open('Models/kidney_update.pkl', 'rb') as f:
-#         model_kidney = pickle.load(f)
+@app.post("/predict_kidney")
+async def predict(input_data_kidney: InputData_kidney):
+    with open('Models/kidney_Model.joblib', 'rb') as f:
+        model_kidney = pickle.load(f)
     
-#     # Prepare features for prediction
-#     features = [[input_data_kidney.age, input_data_kidney.bp, input_data_kidney.al, input_data_kidney.su,
-#                  input_data_kidney.rbc, input_data_kidney.pc, input_data_kidney.bgr, input_data_kidney.bu,
-#                  input_data_kidney.sc, input_data_kidney.sod, input_data_kidney.pot, input_data_kidney.pe]]
+    # Prepare features for prediction
+    features = [[input_data_kidney.age, input_data_kidney.blood_urea, input_data_kidney.ser_crea, input_data_kidney.sodium,
+                 input_data_kidney.potassium]]
     
-#     # Make prediction
-#     prediction = model_kidney.predict(features)
+    # Make prediction
+    prediction = model_kidney.predict(features)
     
-#     # Convert prediction to native Python integer
-#     prediction = int(prediction[0])
+    # Convert prediction to native Python integer
+    prediction = int(prediction[0])
     
-#     return {"prediction": prediction}
+    return {"prediction": prediction}
 
 # @app.post("/predict_heart")
 # async def predict(input_data_heart: InputData_heart):
